@@ -45,6 +45,11 @@ function candies(n, arr) {
   }
   return totalCandy.reduce((total, increase) => total + increase);
 }
+
+function checkStudent (s1, s2, current) {
+  return s1 < s2 ? current++ : current = 1;
+}
+
 console.log(candies(8, [2, 4, 3, 5, 2, 6, 4, 5])); // 12
 
 console.log(candies(10, [2, 4, 2, 6, 1, 7, 8, 9, 2, 1])); // 19
