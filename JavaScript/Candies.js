@@ -21,34 +21,27 @@
  *
  *********************************/
 
-function candies(n, arr) {
-  let current = 1,
-    totalCandy = [current];
+ function candies(n, arr) {
+  let current = 1;
+  let totalCandy = [current];
   for (let i = 0; i + 1 < arr.length; i++) {
-    if (arr[i + 1] > arr[i]) {
-      current++;
-    } else {
-      current = 1;
-    }
-    totalCandy.push(current);
+      current = checkStudent(arr[i], arr[i+1], current)
+      totalCandy.push(current);
   }
   current = 1
   for (let i = arr.length - 1; i >= 0; i--) {
-    if (current > totalCandy[i]) {
-      totalCandy.splice(i, 1, current);
-    }
-    if (arr[i] < arr[i - 1]) {
-      current++;
-    } else {
-      current = 1;
-    }
+      if (current > totalCandy[i]) {
+          totalCandy.splice(i, 1, current);
+      }
+      current = checkStudent(arr[i], arr[i-1], current)
   }
   return totalCandy.reduce((total, increase) => total + increase);
 }
 
-function checkStudent (s1, s2, current) {
-  return s1 < s2 ? current++ : current = 1;
+function checkStudent(s1, s2, current) {
+  return s1<s2 ? current+1 : 1;
 }
+
 
 console.log(candies(8, [2, 4, 3, 5, 2, 6, 4, 5])); // 12
 
