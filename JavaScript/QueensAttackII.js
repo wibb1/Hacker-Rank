@@ -31,8 +31,10 @@ function queensAttack(n, k, r_q, c_q, obstacles) {
     let x = c_q + colI;
     while (x > 0 && x <= n && y > 0 && y <= n) {
       if (!obj[`${y},${x}`]) {
+        console.log(`${y},${x}`)
         squares++;
       } else {
+        console.log("out");
         return;
       }
       x += colI;
