@@ -1,7 +1,26 @@
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
 public class QueensAttack {
+
+    public static void main(String[] args) {
+        /* finished - Queens Attack*/
+        QueensAttack queensAttack = new QueensAttack();
+        List<List<Integer>> list = new ArrayList<>();
+        Integer[] array1 = {5, 5};
+        list.add(Arrays.asList(array1));
+        Integer[] array2 = {4, 2};
+        list.add(Arrays.asList(array2));
+        Integer[] array3 ={2, 3};
+        list.add(Arrays.asList(array3));
+        for (List<Integer> integers : list) System.out.println(integers.get(0));
+        System.out.println(list);
+        int answer = queensAttack.queensAttack(5, 3, 4, 3, list);
+        System.out.println(answer);
+    }
+
     public static int queensAttack(int n, int k, int r_q, int c_q, List<List<Integer>> obstacles) {
         HashMap<String, Boolean> obstacleMap = genHashMap(obstacles);
         int squares = 0;

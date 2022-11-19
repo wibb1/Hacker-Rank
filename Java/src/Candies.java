@@ -1,7 +1,32 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Candies {
+
+    public static void main(String[] args) {
+        /* finished - CANDIES */
+        Integer[] array5 = {9, 8, 7, 6, 5, 4, 3, 2};
+        ArrayList<Integer> arrayList1 = new ArrayList<>(Arrays.asList(array5));
+        System.out.println(Candies.candies(8, arrayList1) + " = " + 36);
+        System.out.println("-------------------------------");
+        Integer[] array1 = {2, 4, 3, 5, 2, 6, 4, 5};
+        arrayList1 = new ArrayList<>(Arrays.asList(array1));
+        System.out.println(Candies.candies(8, arrayList1) + " = " + 12);
+        System.out.println("-------------------------------");
+        Integer[] array2 = {2, 4, 2, 6, 1, 7, 8, 9, 2, 1};
+        arrayList1 = new ArrayList<>(Arrays.asList(array2));
+        System.out.println(Candies.candies(8, arrayList1) + " = " + 19);
+        System.out.println("-------------------------------");
+        Integer[] array3 = {6, 4, 2, 6, 1, 7, 8, 9, 2, 1};
+        arrayList1 = new ArrayList<>(Arrays.asList(array3));
+        System.out.println(Candies.candies(8, arrayList1) + " = " + 21);
+        System.out.println("-------------------------------");
+        Integer[] array4 = {2, 3, 4, 5, 6, 7, 8, 9};
+        arrayList1 = new ArrayList<>(Arrays.asList(array4));
+        System.out.println(Candies.candies(8, arrayList1) + " = " + 36);
+        System.out.println("-------------------------------");
+    }
 
     public static long candies(int n, List<Integer> arr) {
         long current = 1L;
